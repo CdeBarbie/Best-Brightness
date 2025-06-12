@@ -10,6 +10,7 @@ Employee Administration (Admin configures Employees/Warehouse Managers; CRUD ope
 Sales Processing (Cart, payment methods, change calculation)
 Dashboards (Admin, Sales, Warehouse) with metrics & reports
 Printable Sales Slips for customer records
+
 ⭐ Key Features
 Admin Dashboard
 
@@ -28,8 +29,9 @@ View products grouped by category
 Highlight low-stock items (<20 units)
 Toggle category views & see total inventory count
 Sales Slip
-
 Printable receipt detailing transaction, items, totals, and cashier
+
+
 🛠️ Tech Stack
 Framework: ASP.NET Core 7.0, MVC
 ORM: Entity Framework Core
