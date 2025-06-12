@@ -1,0 +1,64 @@
+﻿@*@model FinalBestBrightnessStore.Models.ReportViewModel
+
+@{
+    ViewBag.Title = "Sales Report";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Sales Report</h2>
+
+<form asp-action="GenerateReport" method="post">
+    <div>
+        <label for="dateRange">Select Date Range:</label>
+        <select id="dateRange" name="DateRange">
+            <option value="1">1 Month</option>
+            <option value="3">3 Months</option>
+            <option value="6">6 Months</option>
+            <option value="9">9 Months</option>
+            <option value="12">12 Months</option>
+        </select>
+    </div>
+    <div>
+        <label for="salesperson">Select Salesperson:</label>
+        <select id="salesperson" name="SalespersonId">
+            @foreach (var salesperson in Model.SalesPersons)
+            {
+                <option value="@salesperson.salePersonId">@salesperson.name</option>
+            }
+        </select>
+    </div>
+    <button type="submit">View</button>
+</form>
+
+@if (Model.ReportGenerated)
+{
+    <h3>Report</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Salesperson ID</th>
+                <th>Name</th>
+                <th>Number of Products Sold</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ReportItems)
+            {
+                <tr>
+                    <td>@item.SalespersonId</td>
+                    <td>@item.Name</td>
+                    <td>@item.NumberOfProductsSold</td>
+                    <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                    <td>@item.TotalAmount.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <form method="post" asp-action="GeneratePdf">
+        <input type="hidden" name="DateRange" value="@Model.DateRange" />
+        <input type="hidden" name="SalespersonId" value="@Model.SalespersonId" />
+        <button type="submit">Generate PDF</button>
+    </form>
+}*@

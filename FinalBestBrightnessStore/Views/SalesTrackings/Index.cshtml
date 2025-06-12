@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FinalBestBrightnessStore.Models.SalesTracking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.salePersonId)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.prodId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.dateOfSale)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.salePersonId)
+            </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.prodId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOfSale)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.salesTrackId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.salesTrackId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.salesTrackId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

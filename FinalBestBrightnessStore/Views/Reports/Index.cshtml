@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Sales Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sales Report</h2>
+
+<form method="post" asp-action="GenerateReport">
+    <div>
+        <label>Date Range</label>
+        <select name="dateRange">
+            <option value="1">1 Month</option>
+            <option value="3">3 Months</option>
+            <option value="6">6 Months</option>
+            <option value="9">9 Months</option>
+            <option value="12">12 Months</option>
+        </select>
+    </div>
+    <div>
+        <label>Salesperson</label>
+        <select name="salespersonId">
+            @foreach (var salesperson in ViewBag.Salespersons)
+            {
+                <option value="@salesperson.salePersonId">@salesperson.name @salesperson.surname</option>
+            }
+        </select>
+    </div>
+    <button type="submit">View</button>
+</form>
+
+@section Scripts {
+    <script>
+        // Script to handle date range selection and other client-side functionality
+    </script>
+}
+

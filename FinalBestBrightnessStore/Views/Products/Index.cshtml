@@ -1,0 +1,79 @@
+﻿@model IEnumerable<FinalBestBrightnessStore.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/StockManLayout.cshtml";
+}
+
+<h1>Manage Products</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.productName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantinty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.expDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantinty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.expDate)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+            <td>
+                    
+                <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.prodId">Edit</a>
+                <a class="btn btn-sm btn-secondary" asp-action="Details" asp-route-id="@item.prodId">Details</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.prodId">Delete</a>
+                    
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<style>
+    .btn-primary {
+        background-color: #7b2cbf;
+    }
+
+    .btn-info {
+        background-color: #e0aaff;
+    }
+
+    .btn-secondary {
+        background-color: #c77dff;
+    }
+
+    .btn-danger {
+        background-color: #d90429;
+    }
+</style>

@@ -1,0 +1,48 @@
+﻿@model FinalBestBrightnessStore.Models.Product
+
+@{
+    Layout = "~/Views/Shared/StockManLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.quantinty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.quantinty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.expDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.expDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.prodId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

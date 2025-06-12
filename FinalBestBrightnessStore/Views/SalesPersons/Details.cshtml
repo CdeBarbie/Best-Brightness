@@ -1,0 +1,60 @@
+﻿@model FinalBestBrightnessStore.Models.SalesPerson
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SalesPerson</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.surname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.surname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dateOfbirth)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateOfbirth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.password)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.salePersonId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

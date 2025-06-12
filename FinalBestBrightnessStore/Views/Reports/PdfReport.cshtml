@@ -1,0 +1,52 @@
+﻿@*@model FinalBestBrightnessStore.Models.ReportViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Salesperson Report</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <h2>Salesperson Statement</h2>
+            <p>Name: @Model.ReportItems.FirstOrDefault()?.Name</p>
+            <p>Salesperson ID: @Model.ReportItems.FirstOrDefault()?.SalespersonId</p>
+        </div>
+        <div>
+            <!---<img src="~/images/store_logo.png" alt="Store Logo" />--->
+            <p>Store Name: Best Brightness</p>
+            <p>Date Range: @DateTime.Now.AddMonths(-Model.DateRange).ToString("yyyy-MM-dd") to @DateTime.Now.ToString("yyyy-MM-dd")</p>
+            <p>Print Date: @DateTime.Now.ToString("yyyy-MM-dd")</p>
+        </div>
+    </div>
+    <h3>Statement Details</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Posting Date</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ReportItems)
+            {
+                <tr>
+                    <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                    <td>@item.Name</td> <!-- Assuming ProductName is same as Salesperson Name for now -->
+                    <td>@item.NumberOfProductsSold</td>
+                    <td>@item.TotalAmount.ToString("C")</td> <!-- Assuming TotalAmount as price for now -->
+                    <td>@(item.NumberOfProductsSold * item.TotalAmount).ToString("C")</td> <!-- Total Price -->
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>Total Amount Made: @Model.ReportItems.Sum(x => x.TotalAmount).ToString("C")</p>
+</body>
+</html>*@

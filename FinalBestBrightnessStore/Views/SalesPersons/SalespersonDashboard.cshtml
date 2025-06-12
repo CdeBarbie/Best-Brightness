@@ -1,0 +1,506 @@
+﻿@model SalespersonDashboard
+@{
+    
+    Layout = "~/Views/Shared/SalespersonLayout.cshtml";
+    var productsJson = Newtonsoft.Json.JsonConvert.SerializeObject(Model.Products);
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salesperson Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .btn-primary {
+            background-color: #CCA9E8;
+            border-color: #CCA9E8;
+        }
+
+            .btn-primary:hover {
+                background-color: #C3BEEF;
+                border-color: #C3BEEF;
+            }
+
+        .table-hover tbody tr:hover {
+            background-color: #CCA9E8;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left side with input types and buttons -->
+        <div class="col-md-5">
+            <div class="card p-3">
+                <h3 class="card-title">Product Selection</h3>
+                <div class="row">
+                    <div class="col">
+                        <br />
+                        <div class="mb-3">
+                            <label for="barcode" class="form-label">Enter Barcode</label>
+                            <input type="text" class="form-control" id="barcode">
+                        </div>
+                        <div class="mb-3">
+                            <label for="prodName" class="form-label">Product Name</label>
+                            <select class="form-select" id="prodName" required="required">
+                                <option selected disabled>Select a product</option>
+                                @foreach (var product in Model.Products)
+                                {
+                                    <option value="@product.price" data-product-id="@product.prodId" data-product-quantity="@product.quantinty">
+                                        @product.productName
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="prodPrice" class="form-label">Product Price</label>
+                            <input type="text" class="form-control" id="prodPrice" required="required" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="prodQty" class="form-label">Product Qty</label>
+                            <input type="number" class="form-control" id="prodQty" required="required">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <br />
+                    <label id="ErrMsg"></label><br />
+                    <button type="button" class="btn btn-primary" id="addToCart">Add Sale</button>
+                    <button type="button" class="btn btn-primary" id="reset">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side with customer order table -->
+        <div class="col-md-7">
+            <div class="card p-3">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="m-lg-2">Customer Order</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-hover" id="cartTable">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentType" id="cash" value="cash">
+                            <label class="form-check-label" for="cash">Cash</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentType" id="card" value="card">
+                            <label class="form-check-label" for="card">Card</label>
+                        </div>
+                        <div class="form-group hidden" id="cashAmountGroup">
+                            <label for="cashAmount">Amount Paid</label>
+                            <input type="number" class="form-control" id="cashAmount">
+                        </div>
+                        <h3 id="totalPrice"></h3>
+                        <h3 id="change"></h3>
+                    </div>
+                    <div class="col-6 d-grid">
+                        <button type="button" class="btn btn-primary btn-block text-white" id="ConfirmOrder">Record Sale</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    #ConfirmOrder {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+</style>
+<!--Working with no change display-->
+<script>
+    const products = @Html.Raw(productsJson);
+
+    let totalAmount = 0;
+    let originalQuantities = {};
+
+    $('#prodName').change(function () {
+        const selectedOption = $(this).find('option:selected');
+        const price = selectedOption.val();
+        const quantity = selectedOption.data('product-quantity');
+
+        $('#prodPrice').val(price);
+    });
+
+    $('#barcode').change(function () {
+        const barcode = $(this).val();
+        const product = products.find(p => p.prodId == barcode);
+
+        if (product) {
+            $('#prodName').val(product.price).change();
+            $('#prodPrice').val(product.price);
+        } else {
+            $('#ErrMsg').text('Invalid barcode entered.');
+        }
+    });
+
+    $('#addToCart').click(function () {
+        const selectedOption = $('#prodName').find('option:selected');
+        const name = selectedOption.text();
+        const price = parseFloat($('#prodPrice').val());
+        const qty = parseInt($('#prodQty').val());
+        const productId = selectedOption.data('product-id');
+
+        if (isNaN(qty) || qty <= 0) {
+            $('#ErrMsg').text('Quantity is required and must be greater than zero.');
+            return;
+        }
+
+        const total = price * qty;
+        totalAmount += total;
+
+        const existingRow = $('#cartTable tbody tr:contains(' + name + ')');
+
+        if (existingRow.length > 0) {
+            const existingQty = parseInt(existingRow.find('.cart-quantity').text());
+            const newQty = existingQty + qty;
+            existingRow.find('.cart-quantity').text(newQty);
+            existingRow.find('.cart-total').text((newQty * price).toFixed(2));
+        } else {
+            $('#cartTable tbody').append(`
+                <tr data-product-id="${productId}" data-product-name="${name}" data-product-price="${price}">
+                    <td>${name}</td>
+                    <td>${price.toFixed(2)}</td>
+                    <td class="cart-quantity">${qty}</td>
+                    <td class="cart-total">${total.toFixed(2)}</td>
+                    <td><button class="btn btn-secondary edit-product">Edit</button></td>
+                    <td><button class="btn btn-danger remove-product">Remove</button></td>
+                </tr>
+            `);
+        }
+
+        $('#totalPrice').text('Total Price: ' + totalAmount.toFixed(2));
+
+        const originalQty = originalQuantities[productId] || parseInt(selectedOption.data('product-quantity'));
+        const newQty = originalQty - qty;
+        selectedOption.data('product-quantity', newQty);
+        originalQuantities[productId] = originalQty;
+
+        $('#prodName').val('').change();
+        $('#prodPrice').val('');
+        $('#prodQty').val('');
+        $('#ErrMsg').text('');
+    });
+
+    $(document).on('click', '.edit-product', function () {
+        const row = $(this).closest('tr');
+        const name = row.data('product-name');
+        const price = row.data('product-price');
+        const qty = parseInt(row.find('.cart-quantity').text());
+
+        $('#prodName option').each(function () {
+            if ($(this).text() === name) {
+                $(this).prop('selected', true).change();
+            }
+        });
+        $('#prodPrice').val(price);
+        $('#prodQty').val(qty);
+
+        row.remove();
+
+        totalAmount -= parseFloat(row.find('.cart-total').text());
+        $('#totalPrice').text('Total Price: ' + totalAmount.toFixed(2));
+    });
+
+    $(document).on('click', '.remove-product', function () {
+        const row = $(this).closest('tr');
+        const name = row.data('product-name');
+        const qty = parseInt(row.find('.cart-quantity').text());
+        const total = parseFloat(row.find('.cart-total').text());
+        const productId = $('#prodName option:contains(' + name + ')').data('product-id');
+
+        if (confirm('Do you want to remove this product?')) {
+            totalAmount -= total;
+            $('#totalPrice').text('Total Price: ' + totalAmount.toFixed(2));
+
+            const currentQty = $('#prodName option:contains(' + name + ')').data('product-quantity');
+            const newQty = currentQty + qty;
+            $('#prodName option:contains(' + name + ')').data('product-quantity', newQty);
+
+            row.remove();
+        }
+    });
+
+    $('#reset').click(function () {
+        if (confirm('Are you sure you want to reset?')) {
+            $('#cartTable tbody').empty();
+            $('#totalPrice').text('');
+            totalAmount = 0;
+            $('#ErrMsg').text('');
+
+            $('#prodName option').each(function () {
+                const productId = $(this).data('product-id');
+                if (productId) {
+                    $(this).data('product-quantity', originalQuantities[productId]);
+                }
+            });
+        }
+    });
+
+    $('input[name="paymentType"]').change(function () {
+        const paymentType = $('input[name="paymentType"]:checked').val();
+        if (paymentType === 'cash') {
+            $('#cashAmountGroup').removeClass('hidden');
+        } else {
+            $('#cashAmountGroup').addClass('hidden');
+        }
+    });
+
+    $('#ConfirmOrder').click(function () {
+        const cartItems = [];
+        $('#cartTable tbody tr').each(function () {
+            const productId = $(this).data('product-id');
+            const name = $(this).data('product-name');
+            const price = parseFloat($(this).data('product-price'));
+            const qty = parseInt($(this).find('.cart-quantity').text());
+
+            cartItems.push({
+                prodId: productId,
+                quantity: qty,
+                price: price
+            });
+        });
+
+        if (cartItems.length === 0) {
+            alert('No products in the cart to confirm.');
+            return;
+        }
+
+        fetch('/SalesPersons/ConfirmOrder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cartItems)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.orderId) {
+                    window.location.href = `/SalesPersons/SalesSlip?orderId=${data.orderId}`;
+                } else {
+                    alert('Order confirmation failed.');
+                }
+            })
+            .catch(error => {
+                alert('Error confirming order: ' + error);
+            });
+    });
+
+</script>
+
+
+
+<!--working it is the one work problems in logic of change...-->
+@*<script>
+    const products = @Html.Raw(productsJson);
+
+    let totalAmount = 0;
+    let originalQuantities = {};
+
+    $('#prodName').change(function () {
+        const selectedOption = $(this).find('option:selected');
+        const price = selectedOption.val();
+        const quantity = selectedOption.data('product-quantity');
+
+        $('#prodPrice').val(price);
+    });
+
+    $('#barcode').change(function () {
+        const barcode = $(this).val();
+        const product = products.find(p => p.prodId == barcode);
+
+        if (product) {
+            $('#prodName').val(product.price).change();
+            $('#prodPrice').val(product.price);
+        } else {
+            $('#ErrMsg').text('Invalid barcode entered.');
+        }
+    });
+
+    $('#addToCart').click(function () {
+        const selectedOption = $('#prodName').find('option:selected');
+        const name = selectedOption.text();
+        const price = parseFloat($('#prodPrice').val());
+        const qty = parseInt($('#prodQty').val());
+        const productId = selectedOption.data('product-id');
+
+        if (isNaN(qty) || qty <= 0) {
+            $('#ErrMsg').text('Quantity is required and must be greater than zero.');
+            return;
+        }
+
+        const total = price * qty;
+        totalAmount += total;
+
+        const existingRow = $('#cartTable tbody tr:contains(' + name + ')');
+
+        if (existingRow.length > 0) {
+            const existingQty = parseInt(existingRow.find('.cart-quantity').text());
+            const newQty = existingQty + qty;
+            existingRow.find('.cart-quantity').text(newQty);
+            existingRow.find('.cart-total').text((newQty * price).toFixed(2));
+        } else {
+            $('#cartTable tbody').append(`
+                                <tr data-product-name="${name}" data-product-price="${price}">
+                                    <td>${name}</td>
+                                    <td>${price.toFixed(2)}</td>
+                                    <td class="cart-quantity">${qty}</td>
+                                    <td class="cart-total">${total.toFixed(2)}</td>
+                                    <td><button class="btn btn-secondary edit-product">Edit</button></td>
+                                    <td><button class="btn btn-danger remove-product">Remove</button></td>
+                                </tr>
+                            `);
+        }
+
+        $('#totalPrice').text('Total Price: ' + totalAmount.toFixed(2));
+
+        const originalQty = originalQuantities[productId] || parseInt(selectedOption.data('product-quantity'));
+        const newQty = originalQty - qty;
+        selectedOption.data('product-quantity', newQty);
+        originalQuantities[productId] = originalQty;
+
+        $('#prodName').val('').change();
+        $('#prodPrice').val('');
+        $('#prodQty').val('');
+        $('#ErrMsg').text('');
+    });
+
+    $(document).on('click', '.edit-product', function () {
+        const row = $(this).closest('tr');
+        const name = row.data('product-name');
+        const price = row.data('product-price');
+        const qty = parseInt(row.find('.cart-quantity').text());
+
+        $('#prodName option').each(function () {
+            if ($(this).text() === name) {
+                $(this).prop('selected', true).change();
+            }
+        });
+        $('#prodPrice').val(price);
+        $('#prodQty').val(qty);
+
+        row.remove();
+
+        totalAmount -= parseFloat(row.find('.cart-total').text());
+        $('#totalPrice').text('Total Price: ' + totalAmount.toFixed(2));
+    });
+
+    $(document).on('click', '.remove-product', function () {
+        const row = $(this).closest('tr');
+        const name = row.data('product-name');
+        const qty = parseInt(row.find('.cart-quantity').text());
+        const total = parseFloat(row.find('.cart-total').text());
+        const productId = $('#prodName option:contains(' + name + ')').data('product-id');
+
+        if (confirm('Do you want to remove this product?')) {
+            totalAmount -= total;
+            $('#totalPrice').text('Total Price: ' + totalAmount.toFixed(2));
+
+            const currentQty = $('#prodName option:contains(' + name + ')').data('product-quantity');
+            const newQty = currentQty + qty;
+            $('#prodName option:contains(' + name + ')').data('product-quantity', newQty);
+
+            row.remove();
+        }
+    });
+
+    $('#reset').click(function () {
+        if (confirm('Are you sure you want to reset?')) {
+            $('#cartTable tbody').empty();
+            $('#totalPrice').text('');
+            totalAmount = 0;
+            $('#ErrMsg').text('');
+
+            $('#prodName option').each(function () {
+                const productId = $(this).data('product-id');
+                if (productId) {
+                    $(this).data('product-quantity', originalQuantities[productId]);
+                }
+            });
+        }
+    });
+
+    $('input[name="paymentType"]').change(function () {
+        const paymentType = $('input[name="paymentType"]:checked').val();
+        if (paymentType === 'cash') {
+            $('#cashAmountGroup').removeClass('hidden');
+        } else {
+            $('#cashAmountGroup').addClass('hidden');
+        }
+    });
+
+    $('#ConfirmOrder').click(function () {
+        const cartItems = [];
+        $('#cartTable tbody tr').each(function () {
+            const name = $(this).data('product-name');
+            const price = parseFloat($(this).find('td').eq(1).text());
+            const qty = parseInt($(this).find('td').eq(2).text());
+            const productId = $('#prodName option:contains(' + name + ')').data('product-id');
+
+            cartItems.push({
+                prodId: productId,
+                quantity: qty,
+                price: price
+            });
+        });
+
+
+
+        if (cartItems.length === 0) {
+            alert('No products in the cart to confirm.');
+            return;
+        }
+
+        fetch('/SalesPersons/ConfirmOrder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cartItems)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.orderId) {
+                    window.location.href = `/SalesPersons/SalesSlip?orderId=${data.orderId}`;
+                } else {
+                    alert('Order confirmation failed.');
+                }
+            })
+            .catch(error => {
+                alert('Error confirming order: ' + error);
+            });
+    });
+
+</script>*@
+

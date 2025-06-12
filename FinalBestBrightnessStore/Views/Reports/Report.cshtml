@@ -1,0 +1,151 @@
+﻿@model FinalBestBrightnessStore.Models.ReportViewModel
+
+@{
+    ViewData["Title"] = "Sales Report";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Sales Report</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        .table-container {
+            margin-top: 20px;
+        }
+
+        .report-buttons {
+            margin-bottom: 20px;
+        }
+
+        .sales-slip-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sales-slip-title">
+            <h2>Sales Report</h2>
+            
+        </div>
+        <div class="report-buttons">
+            <button class="btn btn-primary" onclick="loadReport('daily')">Daily Sales</button>
+            <button class="btn btn-primary" onclick="loadReport('weekly')">Weekly Sales</button>
+            <button class="btn btn-primary" onclick="loadReport('monthly')">Monthly Sales</button>
+        </div>
+        <div class="table-container">
+            <div id="noSalesMessage" class="alert alert-warning" style="display: none;">
+                Sales reports are not available
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sale ID</th>
+                        <th>Salesperson Name</th>
+                        <th>Date of Sale</th>
+                        <th>Total Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="salesReportTableBody">
+                    <!-- Sales report data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .btn-primary {
+        background-color: #7b2cbf;
+    }
+
+</style>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        displayNoSalesMessage(true); // Display the message initially
+    });
+
+    function loadReport(period) {
+        fetch(`/Reports/GetSalesReport?period=${period}`)
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('salesReportTableBody');
+                tableBody.innerHTML = '';
+
+                if (data.length === 0) {
+                    displayNoSalesMessage(true);
+                } else {
+                    displayNoSalesMessage(false);
+                    data.forEach(order => {
+                        const row = document.createElement('tr');
+
+                        row.innerHTML = `
+                                            <td>${order.id}</td>
+                                            <td>${order.salesPersonName || ''}</td>
+                                            <td>${new Date(order.dateOfOrder).toLocaleDateString()}</td>
+                                            <td>${order.orderItems.reduce((sum, item) => sum + (item.quantity * item.price), 0).toFixed(2)}</td>
+                                            <td><a href="/Reports/SaleSlip?orderId=${order.id}" class="btn btn-primary">View Items</a></td>
+                                        `;
+
+                        tableBody.appendChild(row);
+                    });
+                }
+            });
+    }
+
+    function displayNoSalesMessage(show) {
+        const noSalesMessage = document.getElementById('noSalesMessage');
+        noSalesMessage.style.display = show ? 'block' : 'none';
+    }
+
+    @*function loadReport(period) {
+        fetch(`/Reports/GetSalesReport?period=${period}`)
+        .then(response => response.json())
+        .then(data => {
+        const tableBody = document.getElementById('salesReportTableBody');
+        tableBody.innerHTML = '';
+
+        data.forEach(order => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+        <td>${order.id}</td>
+        <td>${order.salesPersonName || ''}</td>
+        <td>${new Date(order.dateOfOrder).toLocaleDateString()}</td>
+        <td>${order.orderItems.reduce((sum, item) => sum + (item.quantity * item.price), 0)}</td>
+        <td><a href="/Reports/SaleSlip?orderId=${order.id}" class="btn btn-primary">View Items</a></td>
+        `;
+
+        tableBody.appendChild(row);
+        });
+        });
+        }*@
+
+        //generate report
+        document.getElementById('generatePdfBtn').addEventListener('click', () => {
+            generatePdf();
+        });
+
+    function generatePdf() {
+        html2canvas(document.body, {
+            onrendered: function (canvas) {
+                var img = canvas.toDataURL("image/png");
+                var doc = new jsPDF();
+                doc.addImage(img, 'JPEG', 20, 20);
+                doc.save('sales-report.pdf');
+            }
+        });
+    }
+</script>

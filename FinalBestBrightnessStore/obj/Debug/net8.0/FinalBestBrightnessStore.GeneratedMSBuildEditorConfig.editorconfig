@@ -1,0 +1,299 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FinalBestBrightnessStore
+build_property.RootNamespace = FinalBestBrightnessStore
+build_property.ProjectDir = C:\Users\Luzuko\source\repos\FinalBestBrightnessStore\FinalBestBrightnessStore\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Luzuko\source\repos\FinalBestBrightnessStore\FinalBestBrightnessStore
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Admins/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5zXEFkbWluRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Admins/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Admins/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Admins/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Admins/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Admins/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Reports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Reports/PdfReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xQZGZSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Reports/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Reports/Reportss.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xSZXBvcnRzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Reports/SaleSlip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xTYWxlU2xpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Roles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Roles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Roles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Roles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/SalespersonDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXFNhbGVzcGVyc29uRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/SalesSlip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXFNhbGVzU2xpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesPersons/ViewBarcode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNQZXJzb25zXFZpZXdCYXJjb2RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesTrackings/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNUcmFja2luZ3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesTrackings/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNUcmFja2luZ3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesTrackings/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNUcmFja2luZ3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesTrackings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNUcmFja2luZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/SalesTrackings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNUcmFja2luZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Shared/AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Shared/SalespersonLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNhbGVzcGVyc29uTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Shared/StockManLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFN0b2NrTWFuTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockManangers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tNYW5hbmdlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockManangers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tNYW5hbmdlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockManangers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tNYW5hbmdlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockManangers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tNYW5hbmdlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockManangers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tNYW5hbmdlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockManangers/StockManDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tNYW5hbmdlcnNcU3RvY2tNYW5EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockTrackings/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFja2luZ3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockTrackings/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFja2luZ3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockTrackings/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFja2luZ3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockTrackings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFja2luZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/StockTrackings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tUcmFja2luZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luzuko/source/repos/FinalBestBrightnessStore/FinalBestBrightnessStore/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-wg0jf04i9n

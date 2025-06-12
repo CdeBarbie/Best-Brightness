@@ -1,0 +1,34 @@
+﻿@model IEnumerable<FinalBestBrightnessStore.Models.Product>
+
+@{
+    ViewData["Title"] = "View Barcode";
+    Layout = "~/Views/Shared/SalespersonLayout.cshtml"; // Use appropriate layout
+}
+<html>
+<head>
+    <title>View Barcode</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Barcode and Product Name</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Barcode</th>
+                    <th>Product Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.prodId</td>
+                        <td>@product.productName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

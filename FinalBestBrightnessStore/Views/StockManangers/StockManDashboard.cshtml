@@ -1,0 +1,103 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<FinalBestBrightnessStore.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/StockManLayout.cshtml";
+}
+
+<h3>Stock Manager Dashboard</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width: 400px; border-radius: 10px;">
+                <div class="card-header">
+                    <h4>Products</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var categoryGroup in Model.GroupBy(p => p.Category))
+                    {
+                        <li class="list-group-item">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#category-@categoryGroup.Key.Replace(" ", "")">
+                                @categoryGroup.Key
+                            </button>
+                            <ul class="list-group list-group-flush collapse" id="category-@categoryGroup.Key.Replace(" ", "")">
+                                @foreach (var product in categoryGroup)
+                                {
+                                    <li class="list-group-item @(product.quantinty < 20 ? "list-group-item-danger" : "")">
+                                        @product.productName - @product.quantinty
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="border-radius: 10px;">
+                <div class="card-header">
+                    <h4>Stock Status</h4>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model)
+                        {
+                            <tr>
+                                <td>@product.productName</td>
+                                <td>@product.quantinty</td>
+                                <td>
+                                    @if (product.quantinty == 0)
+                                    {
+                                        <span class="badge badge-danger">Out of Stock</span>
+                                    }
+                                    else if (product.quantinty < 20)
+                                    {
+                                        <span class="badge badge-warning">Running Out</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-success">Sufficient Stock</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .badge.badge-danger {
+        color: red
+    }
+
+    .badge.badge-warning {
+        color: orange;
+    }
+
+    .badge.badge-success {
+        color: green;
+    }  
+</style>
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+}
