@@ -1,4 +1,4 @@
-##BestBrightness Store Management System
+BestBrightness Store Management System
 
 A web-based ASP.NET Core MVC application for Best Brightness (cleaning-products retailer in Ophongolo, KZN) to manage inventory, employees, sales, and reporting.
 
